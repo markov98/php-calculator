@@ -8,18 +8,36 @@
             background-color: lightcyan;
         }
 
-        table {
+        .header {
             color:darkblue;
-            width:100%;
             font-size:26pt;
             font-weight: bold;
+
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .image {
+            float: left;
+            width: 10%;
         }
     </style>
     <body>
-        <table>
-        <td><img src="pictures/numbers.png"/ width="120px"
-        height="120px"></td>
-         <td>Calculator</td>
-         </table>
+
+        <div class="image">
+        <img src="pictures/numbers.png" width="120px"
+        height="120px">
+        </div>
+
+
+        <div class= "Header">Calculator</div>
+         <form><br/><br/><br/><br/><br/><br/>
+             <input type="number" name="num1"/>
+             <br/>+<br/>
+             <input type="number" name="num2"/>
+         </br><button type='submit'>=</button>
+         </form>
     </body>
 </HTML>
