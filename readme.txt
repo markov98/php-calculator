@@ -1,0 +1,1 @@
+Just a simple calculator a made to train my PHP skills.
