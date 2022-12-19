@@ -1,9 +1,10 @@
 <HTML>
     <head>
         <title>Calculator</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="pictures/ico.png">    
     </head>
-    <meta charset="utf8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <body>
 
         <div class="image">
@@ -12,7 +13,7 @@
         </div>
 
 
-        <div class= "Header">Calculator</div>
+        <div class="Header">Calculator</div>
          <form action="index.php" method="POST">
              <input type="number" name='num1'/><br/>
              <select name="operator">
@@ -33,7 +34,7 @@
             $operator=$_POST['operator'];
 
             if ($num1 == null || $num2 == null) {
-                 echo "No number provided";
+                echo "No number provided";
             } elseif ($operator == '+') {
                 echo $num1 + $num2;
             } elseif ($operator == '-') {
