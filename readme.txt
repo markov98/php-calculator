@@ -1,1 +1,1 @@
-Just a simple calculator a made to train my PHP skills.
+Just a simple calculator I made to train my PHP skills.
