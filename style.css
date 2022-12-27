@@ -3,7 +3,7 @@ body {
     background-color: lightcyan;
 }
 
-.header {
+header {
     color:darkblue;
     font-size:26pt;
     font-weight: bold;
@@ -30,7 +30,7 @@ form select {
     margin-bottom: 12px;
 }
 
-div[name=result] {
+.result {
     text-align: center;
 }
 

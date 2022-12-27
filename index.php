@@ -1,4 +1,5 @@
-<HTML>
+<!DOCTYPE html>
+<html>
     <head>
         <title>Calculator</title>
         <meta charset="utf8">
@@ -8,45 +9,55 @@
     <body>
 
         <div class="image">
-        <img src="pictures/numbers.png" width="120px"
-        height="120px">
+            <img src="pictures/numbers.png">
         </div>
 
+        <header>
+            Calculator
+        </header>
 
-        <div class="Header">Calculator</div>
-         <form action="index.php" method="POST">
-             <input type="number" name='num1'/><br/>
-             <select name="operator">
+        <form action="index.php" method="POST">
+            <input type="number" name='num1'/><br/>
+            <select name="operator">
                 <option>+</option>
                 <option>-</option>
                 <option>*</option>
                 <option>/</option>
-             </select><br/>
-             <input type="number" name='num2'/><br/>
+            </select><br/>
+            <input type="number" name='num2'/><br/>
             <button type='submit' name="submit" value='submit'>=</button>
-         </form>
+        </form>
         
-        <div name="result">
-         <?php
-        if (isset($_POST['submit'])) {
-            $num1=$_POST['num1'];
-            $num2=$_POST['num2'];
-            $operator=$_POST['operator'];
+        <footer class="result">
+            <?php
+                if (isset($_POST['submit'])) {
+                    $num1 = sanitize_input($_POST['num1']);
+                    $num2 = sanitize_input($_POST['num2']);
+                    $operator = sanitize_input($_POST['operator']);
+                    if ($num1 == null || $num2 == null) {
+                        echo "No number provided";
+                    } elseif ($operator == '+') {
+                        echo $num1 + $num2;
+                    } elseif ($operator == '-') {
+                        echo $num1 - $num2;
+                    } elseif ($operator == '*') {
+                        echo $num1 * $num2;
+                    } elseif ($operator == '/') {
+                        if ($num2 == 0) {
+                            echo "Cannot divide by zero";
+                        } else {
+                            echo $num1 / $num2;
+                        }
+                    }
+                }
 
-            if ($num1 == null || $num2 == null) {
-                echo "No number provided";
-            } elseif ($operator == '+') {
-                echo $num1 + $num2;
-            } elseif ($operator == '-') {
-                echo $num1 - $num2;
-            } elseif ($operator == '*') {
-                echo $num1 * $num2;
-            } elseif ($operator == '/') {
-                echo $num1 / $num2;
-            }
-        }
-         ?>
-        </div>
-
+                function sanitize_input($data) {
+                    $data = trim($data);
+                    $data = stripslashes($data);
+                    $data = htmlspecialchars($data);
+                    return $data;
+                }
+            ?>
+        </footer>
     </body>
-</HTML>
+</html>
