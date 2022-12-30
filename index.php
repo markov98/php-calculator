@@ -4,7 +4,7 @@
         <title>Calculator</title>
         <meta charset="utf8">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon" type="image/png" href="pictures/ico.png">    
+        <link rel="icon" type="image/png" href="pictures/numbers.png">    
     </head>
     <body>
 
@@ -17,14 +17,14 @@
         </header>
 
         <form action="index.php" method="POST">
-            <input type="number" name='num1'/><br/>
+            <input type="number" step="0.001" name='num1'/><br/>
             <select name="operator">
                 <option>+</option>
                 <option>-</option>
                 <option>*</option>
                 <option>/</option>
             </select><br/>
-            <input type="number" name='num2'/><br/>
+            <input type="number" step="0.001" name='num2'/><br/>
             <button type='submit' name="submit" value='submit'>=</button>
         </form>
         
